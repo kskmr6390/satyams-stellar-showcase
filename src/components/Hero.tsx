@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Full Stack Developer";
+  const fullText = "Senior Backend Developer";
   
   useEffect(() => {
     let index = 0;
@@ -46,8 +46,8 @@ const Hero = () => {
         </p>
         
         <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto animate-fade-in">
-          Passionate about creating exceptional digital experiences with modern technologies. 
-          Let's build something amazing together.
+          Architecting scalable backend systems and APIs that power modern applications. 
+          Specializing in microservices, databases, and high-performance server-side solutions.
         </p>
         
         <div className="space-x-4 animate-fade-in">

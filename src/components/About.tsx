@@ -13,34 +13,36 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-white mb-4">
-              Hello! I'm Satyam Chourasiya
+              Senior Backend Developer & System Architect
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              I'm a passionate Full Stack Developer with expertise in modern web technologies. 
-              I love creating efficient, scalable, and user-friendly applications that solve real-world problems.
+              I'm a seasoned Senior Backend Developer with extensive experience in designing and implementing 
+              robust, scalable server-side architectures. I specialize in building high-performance APIs, 
+              microservices, and distributed systems that handle millions of requests efficiently.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              My journey in software development has equipped me with a diverse skill set spanning 
-              both frontend and backend technologies. I'm constantly learning and adapting to new 
-              technologies to stay at the forefront of web development.
+              My expertise spans across multiple programming languages and frameworks, with a strong focus on 
+              system optimization, database design, and cloud infrastructure. I excel at translating complex 
+              business requirements into reliable technical solutions.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              When I'm not coding, you can find me exploring new technologies, contributing to 
-              open-source projects, or sharing knowledge with the developer community.
+              I'm passionate about mentoring junior developers, establishing best practices, and driving 
+              technical excellence in development teams. I stay current with emerging technologies and 
+              architectural patterns to deliver cutting-edge solutions.
             </p>
             
             <div className="flex flex-wrap gap-4 mt-8">
               <div className="bg-slate-800 rounded-lg p-4">
-                <h4 className="text-purple-400 font-semibold mb-2">Frontend</h4>
-                <p className="text-gray-300 text-sm">React, Vue, Angular</p>
-              </div>
-              <div className="bg-slate-800 rounded-lg p-4">
-                <h4 className="text-purple-400 font-semibold mb-2">Backend</h4>
+                <h4 className="text-purple-400 font-semibold mb-2">Backend Systems</h4>
                 <p className="text-gray-300 text-sm">Node.js, Python, Java</p>
               </div>
               <div className="bg-slate-800 rounded-lg p-4">
-                <h4 className="text-purple-400 font-semibold mb-2">Database</h4>
-                <p className="text-gray-300 text-sm">MySQL, MongoDB</p>
+                <h4 className="text-purple-400 font-semibold mb-2">Databases</h4>
+                <p className="text-gray-300 text-sm">MySQL, MongoDB, Redis</p>
+              </div>
+              <div className="bg-slate-800 rounded-lg p-4">
+                <h4 className="text-purple-400 font-semibold mb-2">Cloud & DevOps</h4>
+                <p className="text-gray-300 text-sm">AWS, Docker, Kubernetes</p>
               </div>
             </div>
           </div>
@@ -48,13 +50,14 @@ const About = () => {
           <div className="relative">
             <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300">
               <div className="bg-slate-900 rounded-lg p-6 -rotate-3">
-                <h4 className="text-white text-xl font-semibold mb-4">Quick Facts</h4>
+                <h4 className="text-white text-xl font-semibold mb-4">Senior Developer Highlights</h4>
                 <ul className="space-y-3 text-gray-300">
-                  <li>🎓 Computer Science Background</li>
-                  <li>💼 Full Stack Developer</li>
-                  <li>🌟 Passionate about Clean Code</li>
-                  <li>🚀 Always Learning New Technologies</li>
-                  <li>🤝 Team Player & Problem Solver</li>
+                  <li>🏗️ System Architecture Design</li>
+                  <li>⚡ High-Performance APIs</li>
+                  <li>🔄 Microservices Architecture</li>
+                  <li>📊 Database Optimization</li>
+                  <li>☁️ Cloud Infrastructure</li>
+                  <li>👥 Technical Leadership</li>
                 </ul>
               </div>
             </div>
