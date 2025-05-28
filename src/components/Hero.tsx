@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Senior Backend Developer";
+  const fullText = "Senior Backend Engineer";
   
   useEffect(() => {
     let index = 0;
@@ -32,7 +32,7 @@ const Hero = () => {
         <div className="mb-8">
           <img
             src="/placeholder.svg"
-            alt="Satyam Chourasiya"
+            alt="Satyam Kumar Chourasiya"
             className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-purple-500 shadow-2xl animate-fade-in"
           />
         </div>
@@ -46,8 +46,8 @@ const Hero = () => {
         </p>
         
         <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto animate-fade-in">
-          Architecting scalable backend systems and APIs that power modern applications. 
-          Specializing in microservices, databases, and high-performance server-side solutions.
+          Expert in Python & FastAPI with 6+ years of experience in designing scalable backend systems, 
+          cloud deployment, and leading high-performance engineering teams.
         </p>
         
         <div className="space-x-4 animate-fade-in">

@@ -13,36 +13,37 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-white mb-4">
-              Senior Backend Developer & System Architect
+              Senior Backend Engineer & AI Systems Architect
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              I'm a seasoned Senior Backend Developer with extensive experience in designing and implementing 
-              robust, scalable server-side architectures. I specialize in building high-performance APIs, 
-              microservices, and distributed systems that handle millions of requests efficiently.
+              Senior Backend Engineer with over 6 years of experience in designing scalable backend systems 
+              and cloud deployment, expert in Python and FastAPI. I led a team of 5 engineers to build 
+              Qatalyst, an AI-powered market research platform processing millions of data points.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              My expertise spans across multiple programming languages and frameworks, with a strong focus on 
-              system optimization, database design, and cloud infrastructure. I excel at translating complex 
-              business requirements into reliable technical solutions.
+              My expertise includes developing advanced search systems with Elasticsearch that boosted data 
+              retrieval accuracy by 30%, and engineering RAG systems using LangChain and open-source LLMs. 
+              I've successfully reduced media processing latency by 90% through asynchronous task queues 
+              and serverless optimization.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              I'm passionate about mentoring junior developers, establishing best practices, and driving 
-              technical excellence in development teams. I stay current with emerging technologies and 
-              architectural patterns to deliver cutting-edge solutions.
+              I specialize in event-driven architecture, microservices design, and have managed 50+ 
+              microservices for large-scale web applications. My focus is on building scalable, 
+              maintainable systems that deliver exceptional performance and reliability.
             </p>
             
             <div className="flex flex-wrap gap-4 mt-8">
               <div className="bg-slate-800 rounded-lg p-4">
-                <h4 className="text-purple-400 font-semibold mb-2">Backend Systems</h4>
-                <p className="text-gray-300 text-sm">Node.js, Python, Java</p>
+                <h4 className="text-purple-400 font-semibold mb-2">Core Technologies</h4>
+                <p className="text-gray-300 text-sm">Python, FastAPI, Django, AWS</p>
               </div>
               <div className="bg-slate-800 rounded-lg p-4">
-                <h4 className="text-purple-400 font-semibold mb-2">Databases</h4>
-                <p className="text-gray-300 text-sm">MySQL, MongoDB, Redis</p>
+                <h4 className="text-purple-400 font-semibold mb-2">Databases & Search</h4>
+                <p className="text-gray-300 text-sm">PostgreSQL, MongoDB, Redis, Elasticsearch</p>
               </div>
               <div className="bg-slate-800 rounded-lg p-4">
-                <h4 className="text-purple-400 font-semibold mb-2">Cloud & DevOps</h4>
-                <p className="text-gray-300 text-sm">AWS, Docker, Kubernetes</p>
+                <h4 className="text-purple-400 font-semibold mb-2">Cloud & Architecture</h4>
+                <p className="text-gray-300 text-sm">AWS, Microservices, Event-Driven</p>
               </div>
             </div>
           </div>
@@ -50,14 +51,14 @@ const About = () => {
           <div className="relative">
             <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300">
               <div className="bg-slate-900 rounded-lg p-6 -rotate-3">
-                <h4 className="text-white text-xl font-semibold mb-4">Senior Developer Highlights</h4>
+                <h4 className="text-white text-xl font-semibold mb-4">Key Achievements</h4>
                 <ul className="space-y-3 text-gray-300">
-                  <li>🏗️ System Architecture Design</li>
-                  <li>⚡ High-Performance APIs</li>
-                  <li>🔄 Microservices Architecture</li>
-                  <li>📊 Database Optimization</li>
-                  <li>☁️ Cloud Infrastructure</li>
-                  <li>👥 Technical Leadership</li>
+                  <li>🚀 Led 5-person engineering team</li>
+                  <li>⚡ 90% reduction in processing latency</li>
+                  <li>🔍 30% boost in data retrieval accuracy</li>
+                  <li>📊 Millions of data points processed</li>
+                  <li>☁️ 50+ microservices managed</li>
+                  <li>💰 25% reduction in server costs</li>
                 </ul>
               </div>
             </div>

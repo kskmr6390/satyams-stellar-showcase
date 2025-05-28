@@ -2,25 +2,18 @@
 const Experience = () => {
   const experiences = [
     {
-      title: "Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      period: "2022 - Present",
-      description: "Developing and maintaining web applications using React.js, Node.js, and MySQL. Collaborated with cross-functional teams to deliver high-quality software solutions.",
-      technologies: ["React.js", "Node.js", "MySQL", "AWS"]
+      title: "Senior Backend Engineer",
+      company: "Entropik",
+      period: "08/2021 - Present",
+      description: "Led a team of 5 developers to build Qatalyst, an AI-powered market research platform using Python (FastAPI), AWS microservices, and event-driven architecture. Engineered RAG systems with LangChain and reduced media processing latency by 90%.",
+      technologies: ["Python", "FastAPI", "AWS", "Elasticsearch", "LangChain", "SQS", "Lambda"]
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Agency",
-      period: "2021 - 2022",
-      description: "Built responsive and interactive user interfaces using modern JavaScript frameworks. Optimized application performance and implemented best practices for accessibility.",
-      technologies: ["Vue.js", "JavaScript", "CSS3", "Git"]
-    },
-    {
-      title: "Junior Developer",
-      company: "StartUp Ventures",
-      period: "2020 - 2021",
-      description: "Assisted in developing web applications and learned modern development practices. Contributed to both frontend and backend development tasks.",
-      technologies: ["HTML5", "CSS3", "JavaScript", "Python"]
+      title: "Associate Software Engineer",
+      company: "Teamlease",
+      period: "07/2019 - 08/2021",
+      description: "Automated email workflows with chatbot APIs, reducing response time to under 5 minutes. Refactored legacy TL-Connect modules (attendance, payroll), reducing errors by 20% and optimizing database queries for 30% faster data processing.",
+      technologies: ["Python", "SQL Server", "REST APIs", "Automation", "Legacy Systems"]
     }
   ];
 
@@ -33,7 +26,7 @@ const Experience = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8"></div>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            My professional journey and the experiences that shaped my career
+            6+ years of professional experience building scalable backend systems and leading engineering teams
           </p>
         </div>
 
