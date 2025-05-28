@@ -38,16 +38,16 @@ const Hero = () => {
         </div>
         
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 animate-fade-in">
-          Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Satyam</span>
+          Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Satyam Kumar Chourasiya</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-gray-300 mb-8 h-8 animate-fade-in">
           {displayText}<span className="animate-pulse">|</span>
         </p>
         
-        <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto animate-fade-in">
+        <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto animate-fade-in">
           Expert in Python & FastAPI with 6+ years of experience in designing scalable backend systems, 
-          cloud deployment, and leading high-performance engineering teams.
+          cloud deployment, and leading high-performance engineering teams. Specialized in Scalable Systems, Cloud Deployment, and AI-powered applications.
         </p>
         
         <div className="space-x-4 animate-fade-in">

@@ -40,7 +40,7 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8"></div>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities and interesting projects
+            I'm always open to discussing new opportunities and interesting projects in backend engineering
           </p>
         </div>
 
@@ -81,7 +81,11 @@ const Contact = () => {
             </div>
 
             <div className="bg-slate-900/50 rounded-xl p-6 backdrop-blur-sm border border-slate-700/50">
-              <h4 className="text-white font-semibold mb-4">LinkedIn Profile</h4>
+              <h4 className="text-white font-semibold mb-4">Professional Summary</h4>
+              <p className="text-gray-300 text-sm mb-4">
+                Seeking a Senior Backend Engineer position where my scalable backend system design and cloud 
+                optimization skills will support your mission of powering intelligent agent workflows and AI-native applications.
+              </p>
               <a
                 href="https://www.linkedin.com/in/satyam-chourasiya-931674141/"
                 target="_blank"

@@ -2,36 +2,69 @@
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend Development",
-      skills: [
-        { name: "React.js", level: 90 },
-        { name: "Vue.js", level: 85 },
-        { name: "Angular", level: 80 },
-        { name: "JavaScript/TypeScript", level: 92 },
-        { name: "HTML5/CSS3", level: 95 },
-        { name: "Tailwind CSS", level: 88 },
-      ]
-    },
-    {
       title: "Backend Development",
       skills: [
-        { name: "Node.js", level: 88 },
-        { name: "Python", level: 85 },
-        { name: "Java", level: 82 },
-        { name: "Express.js", level: 87 },
-        { name: "RESTful APIs", level: 90 },
-        { name: "GraphQL", level: 75 },
+        { name: "Python", level: 95 },
+        { name: "FastAPI", level: 92 },
+        { name: "Django", level: 88 },
+        { name: "Flask", level: 85 },
+        { name: "REST APIs", level: 95 },
+        { name: "GraphQL", level: 82 },
       ]
     },
     {
-      title: "Database & Tools",
+      title: "Cloud & Infrastructure",
       skills: [
-        { name: "MySQL", level: 88 },
+        { name: "AWS", level: 90 },
+        { name: "Docker", level: 88 },
+        { name: "Terraform", level: 82 },
+        { name: "Microservices", level: 92 },
+        { name: "Serverless", level: 85 },
+        { name: "CI/CD", level: 87 },
+      ]
+    },
+    {
+      title: "Databases & Search",
+      skills: [
+        { name: "PostgreSQL", level: 90 },
         { name: "MongoDB", level: 85 },
-        { name: "Git/GitHub", level: 92 },
-        { name: "Docker", level: 78 },
-        { name: "AWS", level: 75 },
-        { name: "Firebase", level: 82 },
+        { name: "Redis", level: 88 },
+        { name: "Elasticsearch", level: 90 },
+        { name: "MySQL", level: 85 },
+        { name: "DynamoDB", level: 78 },
+      ]
+    },
+    {
+      title: "Message Queues & Tools",
+      skills: [
+        { name: "Kafka", level: 85 },
+        { name: "RabbitMQ", level: 82 },
+        { name: "SQS", level: 88 },
+        { name: "Celery", level: 87 },
+        { name: "WebSockets", level: 80 },
+        { name: "AsyncIO", level: 90 },
+      ]
+    },
+    {
+      title: "AI & Data Processing",
+      skills: [
+        { name: "LangChain", level: 88 },
+        { name: "RAG Systems", level: 85 },
+        { name: "Open-source LLMs", level: 82 },
+        { name: "Data Processing", level: 92 },
+        { name: "Event-Driven Architecture", level: 90 },
+        { name: "System Design", level: 95 },
+      ]
+    },
+    {
+      title: "Security & Monitoring",
+      skills: [
+        { name: "OAuth2", level: 88 },
+        { name: "JWT", level: 90 },
+        { name: "Security Best Practices", level: 92 },
+        { name: "Monitoring", level: 85 },
+        { name: "Load Balancing", level: 87 },
+        { name: "API Rate Limiting", level: 88 },
       ]
     }
   ];
@@ -41,11 +74,11 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Skills</span>
+            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Skills</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8"></div>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            Here are the technologies and tools I work with to bring ideas to life
+            Comprehensive expertise in backend development, cloud architecture, and AI systems
           </p>
         </div>
 
