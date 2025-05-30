@@ -1,10 +1,8 @@
-Certainly! Here's a professional and concise `README.md` for your GitHub repository [satyams-stellar-showcase](https://github.com/kskmr6390/satyams-stellar-showcase):
 
----
 
-# Satyam's Stellar Showcase
+# Satyam's Profile
 
-Welcome to **Satyam's Stellar Showcase**—a modern web application built with the latest frontend technologies to deliver a seamless user experience.
+Welcome to ** My profile**—a modern web application built with the latest frontend technologies to deliver a seamless user experience.
 
 ## 🚀 Project Overview
 
