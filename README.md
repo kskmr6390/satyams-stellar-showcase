@@ -2,7 +2,7 @@
 
 # Satyam's Profile
 
-Welcome to ** My profile**—a modern web application built with the latest frontend technologies to deliver a seamless user experience.
+Welcome to **My Profile**—a modern web application built with the latest frontend technologies to deliver a seamless user experience.
 
 ## 🚀 Project Overview
 
