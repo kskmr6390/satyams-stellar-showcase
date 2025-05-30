@@ -1,5 +1,5 @@
 
-import { ArrowDown, Download, ExternalLink } from "lucide-react";
+import { ArrowDown, Download, ExternalLink, Github } from "lucide-react";
 import { useEffect, useState } from "react";
 import LinkedInBackground from "./LinkedInBackground";
 
@@ -114,6 +114,16 @@ const Hero = () => {
           >
             <ExternalLink className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             View LinkedIn
+          </a>
+          
+          <a
+            href="https://github.com/kskmr6390"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-blue-500/25 flex items-center gap-3"
+          >
+            <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            View GitHub
           </a>
         </div>
       </div>
