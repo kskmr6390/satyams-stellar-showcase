@@ -3,6 +3,8 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Backend Development",
+      color: "from-purple-500 to-purple-600",
+      bgColor: "bg-purple-50",
       skills: [
         { name: "Python", level: 95 },
         { name: "FastAPI", level: 92 },
@@ -14,6 +16,8 @@ const Skills = () => {
     },
     {
       title: "Cloud & Infrastructure",
+      color: "from-blue-500 to-blue-600",
+      bgColor: "bg-blue-50",
       skills: [
         { name: "AWS", level: 90 },
         { name: "Docker", level: 88 },
@@ -25,6 +29,8 @@ const Skills = () => {
     },
     {
       title: "Databases & Search",
+      color: "from-green-500 to-green-600",
+      bgColor: "bg-green-50",
       skills: [
         { name: "PostgreSQL", level: 90 },
         { name: "MongoDB", level: 85 },
@@ -36,6 +42,8 @@ const Skills = () => {
     },
     {
       title: "Message Queues & Tools",
+      color: "from-orange-500 to-orange-600",
+      bgColor: "bg-orange-50",
       skills: [
         { name: "Kafka", level: 85 },
         { name: "RabbitMQ", level: 82 },
@@ -47,6 +55,8 @@ const Skills = () => {
     },
     {
       title: "AI & Data Processing",
+      color: "from-pink-500 to-pink-600",
+      bgColor: "bg-pink-50",
       skills: [
         { name: "LangChain", level: 88 },
         { name: "RAG Systems", level: 85 },
@@ -58,6 +68,8 @@ const Skills = () => {
     },
     {
       title: "Security & Monitoring",
+      color: "from-red-500 to-red-600",
+      bgColor: "bg-red-50",
       skills: [
         { name: "OAuth2", level: 88 },
         { name: "JWT", level: 90 },
@@ -70,34 +82,42 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 bg-slate-800/30">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Skills</span>
+    <section id="skills" className="py-24 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-7xl font-bold text-slate-800 mb-6">
+            Technical{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+              Skills
+            </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8"></div>
-          <p className="text-gray-300 max-w-2xl mx-auto">
+          <div className="w-32 h-2 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-8 rounded-full"></div>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Comprehensive expertise in backend development, cloud architecture, and AI systems
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-slate-900/50 rounded-xl p-6 backdrop-blur-sm border border-slate-700/50">
-              <h3 className="text-xl font-semibold text-white mb-6 text-center">
+            <div key={categoryIndex} className={`${category.bgColor} rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-white/50`}>
+              <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
+                <div className="w-8 h-8 bg-white rounded-lg"></div>
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-8">
                 {category.title}
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2">
+                  <div key={skillIndex} className="space-y-3">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300 font-medium">{skill.name}</span>
-                      <span className="text-purple-400 text-sm">{skill.level}%</span>
+                      <span className="text-slate-700 font-semibold">{skill.name}</span>
+                      <span className={`text-sm font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
+                        {skill.level}%
+                      </span>
                     </div>
-                    <div className="w-full bg-slate-700 rounded-full h-2">
+                    <div className="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
                       <div 
-                        className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-1000 ease-out"
+                        className={`bg-gradient-to-r ${category.color} h-3 rounded-full transition-all duration-1000 ease-out shadow-sm`}
                         style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>

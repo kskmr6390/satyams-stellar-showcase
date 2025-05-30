@@ -1,5 +1,5 @@
 
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Download, ExternalLink } from "lucide-react";
 import { useEffect, useState } from "react";
 import LinkedInBackground from "./LinkedInBackground";
 
@@ -26,55 +26,100 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
       {/* LinkedIn Background Scroll */}
       <LinkedInBackground />
       
-      {/* Original dot pattern background */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+      {/* Animated gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/70 via-purple-900/70 to-pink-900/70"></div>
       
-      <div className="text-center z-10 px-4">
-        <div className="mb-8">
-          <img
-            src="/placeholder.svg"
-            alt="Satyam Kumar Chourasiya"
-            className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-purple-500 shadow-2xl animate-fade-in"
-          />
+      {/* Floating particles */}
+      <div className="absolute inset-0">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${3 + Math.random() * 4}s`
+            }}
+          >
+            <div className="w-1 h-1 bg-white/20 rounded-full"></div>
+          </div>
+        ))}
+      </div>
+      
+      {/* Geometric shapes */}
+      <div className="absolute top-20 left-10 w-20 h-20 border border-purple-400/30 rotate-45 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-16 h-16 bg-pink-500/20 rounded-full animate-bounce"></div>
+      <div className="absolute top-1/3 right-20 w-12 h-12 border-2 border-blue-400/30 rounded-full animate-spin-slow"></div>
+      
+      <div className="text-center z-20 px-4 max-w-5xl mx-auto">
+        <div className="mb-8 relative">
+          <div className="relative inline-block">
+            <img
+              src="/placeholder.svg"
+              alt="Satyam Kumar Chourasiya"
+              className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-gradient-to-r from-purple-400 to-pink-400 shadow-2xl animate-fade-in relative z-10"
+            />
+            <div className="absolute inset-0 w-40 h-40 rounded-full mx-auto animate-pulse bg-gradient-to-r from-purple-400/30 to-pink-400/30 blur-xl"></div>
+          </div>
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 animate-fade-in">
-          Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Satyam Kumar Chourasiya</span>
+        <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 animate-fade-in leading-tight">
+          Hi, I'm{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 animate-gradient-x">
+            Satyam Kumar Chourasiya
+          </span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-gray-300 mb-8 h-8 animate-fade-in">
-          {displayText}<span className="animate-pulse">|</span>
-        </p>
+        <div className="relative mb-8">
+          <p className="text-2xl md:text-4xl text-gray-200 h-12 animate-fade-in font-light">
+            {displayText}<span className="animate-pulse text-purple-400">|</span>
+          </p>
+        </div>
         
-        <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto animate-fade-in">
+        <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed font-light">
           Expert in Python & FastAPI with 6+ years of experience in designing scalable backend systems, 
-          cloud deployment, and leading high-performance engineering teams. Specialized in Scalable Systems, Cloud Deployment, and AI-powered applications.
+          cloud deployment, and leading high-performance engineering teams. Specialized in{" "}
+          <span className="text-purple-400 font-medium">Scalable Systems</span>,{" "}
+          <span className="text-pink-400 font-medium">Cloud Deployment</span>, and{" "}
+          <span className="text-blue-400 font-medium">AI-powered applications</span>.
         </p>
         
-        <div className="space-x-4 animate-fade-in">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in">
           <button
             onClick={scrollToAbout}
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-purple-500/25 flex items-center gap-3"
           >
             Get to Know Me
+            <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
           </button>
+          
+          <a
+            href="#"
+            className="group border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-purple-500/25 flex items-center gap-3"
+          >
+            <Download className="w-5 h-5" />
+            Download Resume
+          </a>
+          
           <a
             href="https://www.linkedin.com/in/satyam-chourasiya-931674141/"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 inline-block"
+            className="group border-2 border-pink-400 text-pink-400 hover:bg-pink-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-pink-500/25 flex items-center gap-3"
           >
+            <ExternalLink className="w-5 h-5 group-hover:rotate-12 transition-transform" />
             View LinkedIn
           </a>
         </div>
       </div>
       
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="text-gray-400" size={24} />
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+        <ArrowDown className="text-gray-300 opacity-70" size={32} />
       </div>
     </section>
   );
