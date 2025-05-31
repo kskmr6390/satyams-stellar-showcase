@@ -1,4 +1,3 @@
-
 import { ArrowDown, Download, ExternalLink, Github } from "lucide-react";
 import { useEffect, useState } from "react";
 import LinkedInBackground from "./LinkedInBackground";
@@ -23,6 +22,15 @@ const Hero = () => {
 
   const scrollToAbout = () => {
     document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleResumeDownload = () => {
+    const link = document.createElement('a');
+    link.href = 'https://github.com/kskmr6390/satyams-stellar-showcase/raw/main/resume.pdf';
+    link.download = 'satyam_resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -98,16 +106,13 @@ const Hero = () => {
             <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
           </button>
           
-          <a
-            href="https://github.com/kskmr6390/satyams-stellar-showcase/blob/main/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            download="Satyam_Kumar_Chourasiya_Resume.pdf"
+          <button
+            onClick={handleResumeDownload}
             className="group border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-purple-500/25 flex items-center gap-3"
           >
             <Download className="w-5 h-5" />
             Download Resume
-          </a>
+          </button>
           
           <a
             href="https://www.linkedin.com/in/satyam-chourasiya-931674141/"
