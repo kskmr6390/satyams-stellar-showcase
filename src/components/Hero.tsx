@@ -60,9 +60,9 @@ const Hero = () => {
         <div className="mb-8 relative">
           <div className="relative inline-block">
             <img
-              src="/placeholder.svg"
+              src="/lovable-uploads/608bfbbf-b299-4088-a452-f703c3f34c4a.png"
               alt="Satyam Kumar Chourasiya"
-              className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-gradient-to-r from-purple-400 to-pink-400 shadow-2xl animate-fade-in relative z-10"
+              className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-gradient-to-r from-purple-400 to-pink-400 shadow-2xl animate-fade-in relative z-10 object-cover"
             />
             <div className="absolute inset-0 w-40 h-40 rounded-full mx-auto animate-pulse bg-gradient-to-r from-purple-400/30 to-pink-400/30 blur-xl"></div>
           </div>
@@ -99,7 +99,10 @@ const Hero = () => {
           </button>
           
           <a
-            href="#"
+            href="https://github.com/kskmr6390/satyams-stellar-showcase/blob/main/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Satyam_Kumar_Chourasiya_Resume.pdf"
             className="group border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-purple-500/25 flex items-center gap-3"
           >
             <Download className="w-5 h-5" />
