@@ -1,6 +1,7 @@
 import { ArrowDown, Download, ExternalLink, Github } from "lucide-react";
 import { useEffect, useState } from "react";
 import LinkedInBackground from "./LinkedInBackground";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
@@ -106,23 +107,68 @@ const Hero = () => {
             <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
           </button>
           
-          <button
-            onClick={handleResumeDownload}
-            className="group border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-purple-500/25 flex items-center gap-3"
-          >
-            <Download className="w-5 h-5" />
-            Download Resume
-          </button>
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <button
+                onClick={handleResumeDownload}
+                className="group border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-purple-500/25 flex items-center gap-3"
+              >
+                <Download className="w-5 h-5" />
+                Download Resume
+              </button>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80 p-4">
+              <div className="flex flex-col space-y-2">
+                <h4 className="text-sm font-semibold">Resume Preview</h4>
+                <p className="text-xs text-muted-foreground">
+                  Click to download my latest resume in PDF format
+                </p>
+                <div className="border rounded-md p-2 bg-muted/50">
+                  <iframe
+                    src="https://github.com/kskmr6390/satyams-stellar-showcase/blob/main/resume.pdf"
+                    width="100%"
+                    height="200"
+                    className="rounded border-0"
+                    title="Resume Preview"
+                  />
+                </div>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
           
-          <a
-            href="https://www.linkedin.com/in/satyam-chourasiya-931674141/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group border-2 border-pink-400 text-pink-400 hover:bg-pink-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-pink-500/25 flex items-center gap-3"
-          >
-            <ExternalLink className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-            View LinkedIn
-          </a>
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <a
+                href="https://www.linkedin.com/in/satyam-chourasiya-931674141/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group border-2 border-pink-400 text-pink-400 hover:bg-pink-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-pink-500/25 flex items-center gap-3"
+              >
+                <ExternalLink className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                View LinkedIn
+              </a>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80 p-4">
+              <div className="flex flex-col space-y-2">
+                <h4 className="text-sm font-semibold">LinkedIn Profile</h4>
+                <p className="text-xs text-muted-foreground">
+                  Connect with me on LinkedIn to see my professional network and experience
+                </p>
+                <div className="border rounded-md p-3 bg-muted/50">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">SC</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-sm">Satyam Kumar Chourasiya</p>
+                      <p className="text-xs text-muted-foreground">Senior Backend Engineer</p>
+                      <p className="text-xs text-blue-600">500+ connections</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
           
           <a
             href="https://github.com/kskmr6390"
