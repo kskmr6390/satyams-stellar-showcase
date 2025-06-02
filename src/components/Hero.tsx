@@ -1,3 +1,4 @@
+
 import { ArrowDown, Download, ExternalLink, Github } from "lucide-react";
 import { useEffect, useState } from "react";
 import LinkedInBackground from "./LinkedInBackground";
@@ -117,20 +118,23 @@ const Hero = () => {
                 Download Resume
               </button>
             </HoverCardTrigger>
-            <HoverCardContent className="w-80 p-4">
-              <div className="flex flex-col space-y-2">
-                <h4 className="text-sm font-semibold">Resume Preview</h4>
-                <p className="text-xs text-muted-foreground">
+            <HoverCardContent className="w-96 p-6">
+              <div className="flex flex-col space-y-4">
+                <h4 className="text-lg font-semibold">Resume Preview</h4>
+                <p className="text-sm text-muted-foreground">
                   Click to download my latest resume in PDF format
                 </p>
-                <div className="border rounded-md p-2 bg-muted/50">
+                <div className="border rounded-md overflow-hidden bg-muted/50">
                   <iframe
                     src="https://github.com/kskmr6390/satyams-stellar-showcase/blob/main/resume.pdf"
                     width="100%"
-                    height="200"
+                    height="300"
                     className="rounded border-0"
                     title="Resume Preview"
                   />
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  📄 satyam_resume.pdf
                 </div>
               </div>
             </HoverCardContent>
@@ -148,37 +152,85 @@ const Hero = () => {
                 View LinkedIn
               </a>
             </HoverCardTrigger>
-            <HoverCardContent className="w-80 p-4">
-              <div className="flex flex-col space-y-2">
-                <h4 className="text-sm font-semibold">LinkedIn Profile</h4>
-                <p className="text-xs text-muted-foreground">
+            <HoverCardContent className="w-96 p-6">
+              <div className="flex flex-col space-y-4">
+                <h4 className="text-lg font-semibold">LinkedIn Profile</h4>
+                <p className="text-sm text-muted-foreground">
                   Connect with me on LinkedIn to see my professional network and experience
                 </p>
-                <div className="border rounded-md p-3 bg-muted/50">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">SC</span>
+                <div className="border rounded-md p-4 bg-muted/50">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-xl">SC</span>
                     </div>
-                    <div>
-                      <p className="font-medium text-sm">Satyam Kumar Chourasiya</p>
-                      <p className="text-xs text-muted-foreground">Senior Backend Engineer</p>
-                      <p className="text-xs text-blue-600">500+ connections</p>
+                    <div className="flex-1">
+                      <p className="font-medium text-base">Satyam Kumar Chourasiya</p>
+                      <p className="text-sm text-muted-foreground">Senior Backend Engineer</p>
+                      <p className="text-sm text-blue-600">500+ connections</p>
+                      <p className="text-xs text-muted-foreground mt-1">Bangalore, Karnataka, India</p>
                     </div>
+                  </div>
+                  <div className="mt-3 text-sm">
+                    <p className="font-medium mb-1">Experience Highlights:</p>
+                    <ul className="text-xs text-muted-foreground space-y-1">
+                      <li>• 6+ years in Backend Engineering</li>
+                      <li>• Python, FastAPI, AWS Expert</li>
+                      <li>• Led teams of 5+ developers</li>
+                      <li>• Built AI-powered platforms</li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </HoverCardContent>
           </HoverCard>
           
-          <a
-            href="https://github.com/kskmr6390"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-blue-500/25 flex items-center gap-3"
-          >
-            <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            View GitHub
-          </a>
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <a
+                href="https://github.com/kskmr6390"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-blue-500/25 flex items-center gap-3"
+              >
+                <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                View GitHub
+              </a>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-96 p-6">
+              <div className="flex flex-col space-y-4">
+                <h4 className="text-lg font-semibold">GitHub Profile</h4>
+                <p className="text-sm text-muted-foreground">
+                  Explore my code repositories and open source contributions
+                </p>
+                <div className="border rounded-md p-4 bg-muted/50">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center">
+                      <Github className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-medium text-base">kskmr6390</p>
+                      <p className="text-sm text-muted-foreground">Satyam Kumar Chourasiya</p>
+                      <p className="text-xs text-muted-foreground mt-1">Backend Engineer & Open Source Contributor</p>
+                    </div>
+                  </div>
+                  <div className="mt-3 text-sm">
+                    <p className="font-medium mb-1">Repository Highlights:</p>
+                    <ul className="text-xs text-muted-foreground space-y-1">
+                      <li>• Python & FastAPI projects</li>
+                      <li>• AI/ML implementations</li>
+                      <li>• Cloud deployment scripts</li>
+                      <li>• Microservices architecture</li>
+                    </ul>
+                  </div>
+                  <div className="flex gap-4 mt-3 text-xs">
+                    <span className="bg-green-100 text-green-800 px-2 py-1 rounded">Python</span>
+                    <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded">JavaScript</span>
+                    <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded">Docker</span>
+                  </div>
+                </div>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
         </div>
       </div>
       
