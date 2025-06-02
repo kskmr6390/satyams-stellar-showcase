@@ -1,6 +1,5 @@
-
 import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, Clock } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -118,6 +117,15 @@ const ChatWindow = () => {
       {/* Chat Window */}
       {isOpen && (
         <div className="fixed bottom-24 right-6 z-40 w-96 h-[500px] bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 flex flex-col overflow-hidden">
+          {/* Coming Soon Banner */}
+          <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 text-center">
+            <div className="flex items-center justify-center gap-2">
+              <Clock className="w-4 h-4" />
+              <span className="text-sm font-semibold">Enhanced AI Assistant Coming Soon!</span>
+            </div>
+            <p className="text-xs opacity-90 mt-1">Currently using basic responses. Full AI integration in progress.</p>
+          </div>
+
           {/* Header */}
           <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4 flex items-center gap-3">
             <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
