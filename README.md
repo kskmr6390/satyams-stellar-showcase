@@ -1,8 +1,7 @@
 
-
 # Satyam's Profile
 
-Welcome to **My Profile**—a modern web application built with the latest frontend technologies to deliver a seamless user experience.
+Welcome to **Satyam's Profile**—a modern web application built with the latest frontend technologies to deliver a seamless user experience.
 
 ## 🚀 Project Overview
 
@@ -27,13 +26,13 @@ This project serves as a personal portfolio and showcase platform, highlighting 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/kskmr6390/satyams-stellar-showcase.git
+   git clone https://github.com/kskmr6390/satyams-profile.git
    ```
 
 2. **Navigate to the project directory:**
 
    ```bash
-   cd satyams-stellar-showcase
+   cd satyams-profile
    ```
 
 3. **Install dependencies:**
@@ -85,4 +84,3 @@ This project is open-source and available under the [MIT License](LICENSE).
 ---
 
 Feel free to customize this `README.md` further to include specific sections such as "Features," "Screenshots," or "Contributing" based on your project's needs.
-
