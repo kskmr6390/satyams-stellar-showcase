@@ -1,12 +1,15 @@
-
 import { ArrowDown, Download, ExternalLink, Github } from "lucide-react";
 import { useEffect, useState } from "react";
 import LinkedInBackground from "./LinkedInBackground";
+import VoiceIntro from "./VoiceIntro";
+import ScheduleMeeting from "./ScheduleMeeting";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
   const fullText = "Senior Backend Engineer";
+  
+  const introText = "Hi, I'm Satyam Kumar Chourasiya, a Senior Backend Engineer with over 6 years of experience in designing scalable backend systems, cloud deployment, and leading high-performance engineering teams. I specialize in Python, FastAPI, and building AI-powered applications that drive business growth.";
   
   useEffect(() => {
     let index = 0;
@@ -99,7 +102,7 @@ const Hero = () => {
           <span className="text-blue-400 font-medium">AI-powered applications</span>.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in flex-wrap">
           <button
             onClick={scrollToAbout}
             className="group bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-purple-500/25 flex items-center gap-3"
@@ -107,6 +110,10 @@ const Hero = () => {
             Get to Know Me
             <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
           </button>
+          
+          <VoiceIntro text={introText} />
+          
+          <ScheduleMeeting />
           
           <HoverCard>
             <HoverCardTrigger asChild>
