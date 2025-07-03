@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import LinkedInBackground from "./LinkedInBackground";
 import VoiceIntro from "./VoiceIntro";
 import ScheduleMeeting from "./ScheduleMeeting";
+import TopmateMeeting from "./TopmateMeeting";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 const Hero = () => {
@@ -114,6 +115,8 @@ const Hero = () => {
           <VoiceIntro text={introText} />
           
           <ScheduleMeeting />
+          
+          <TopmateMeeting />
           
           <HoverCard>
             <HoverCardTrigger asChild>
