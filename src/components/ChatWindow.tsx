@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot, User, Clock } from 'lucide-react';
 
@@ -30,13 +31,20 @@ const ChatWindow = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Auto-popup chat after 3 seconds when component mounts
+  // Auto-popup chat after 3 seconds, then close after 3 more seconds
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const showTimer = setTimeout(() => {
       setIsOpen(true);
     }, 3000);
 
-    return () => clearTimeout(timer);
+    const hideTimer = setTimeout(() => {
+      setIsOpen(false);
+    }, 6000);
+
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(hideTimer);
+    };
   }, []);
 
   const sendMessageToAI = async (message: string) => {

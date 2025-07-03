@@ -8,7 +8,7 @@ const TopmateMeeting = () => {
       <DialogTrigger asChild>
         <button className="group relative border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-green-500/25 flex items-center gap-3">
           <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform" />
-          Book on Topmate
+          Schedule Meeting
           <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-pulse flex items-center gap-1">
             <Sparkles className="w-3 h-3" />
             NEW
