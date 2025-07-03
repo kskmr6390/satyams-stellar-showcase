@@ -1,10 +1,26 @@
 
 import { Calendar, Sparkles } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const TopmateMeeting = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Auto-open dialog after 2 seconds, then close after 8 seconds
+  useEffect(() => {
+    const openTimer = setTimeout(() => {
+      setIsOpen(true);
+    }, 2000);
+
+    const closeTimer = setTimeout(() => {
+      setIsOpen(false);
+    }, 10000);
+
+    return () => {
+      clearTimeout(openTimer);
+      clearTimeout(closeTimer);
+    };
+  }, []);
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -18,7 +34,7 @@ const TopmateMeeting = () => {
           </span>
         </button>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[80vh] p-0 transition-all duration-700 ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]">
+      <DialogContent className="max-w-4xl max-h-[80vh] p-0 transition-all duration-1000 ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]">
         <DialogHeader className="p-6 pb-0">
           <DialogTitle className="text-2xl font-bold text-center animate-fade-in">
             Book a Meeting with Satyam
@@ -34,20 +50,42 @@ const TopmateMeeting = () => {
               style={{ 
                 border: 'none', 
                 borderRadius: '8px',
-                transition: 'all 0.8s ease-in-out'
+                transition: 'all 1.5s ease-in-out',
+                scrollBehavior: 'smooth'
               }}
               title="Book a meeting with Satyam on Topmate"
-              className="w-full transform transition-all duration-1000 ease-in-out hover:scale-[1.02]"
+              className="w-full transform transition-all duration-2000 ease-in-out hover:scale-[1.02]"
               onLoad={(e) => {
                 // Smooth scroll effect when iframe loads
                 const iframe = e.target as HTMLIFrameElement;
                 iframe.style.opacity = '0';
-                iframe.style.transform = 'translateY(20px)';
+                iframe.style.transform = 'translateY(30px)';
                 setTimeout(() => {
-                  iframe.style.transition = 'all 1s ease-in-out';
+                  iframe.style.transition = 'all 2s ease-in-out';
                   iframe.style.opacity = '1';
                   iframe.style.transform = 'translateY(0)';
-                }, 100);
+                  
+                  // Slow scroll effect inside iframe
+                  setTimeout(() => {
+                    try {
+                      if (iframe.contentWindow) {
+                        iframe.contentWindow.scrollTo({
+                          top: 100,
+                          behavior: 'smooth'
+                        });
+                        setTimeout(() => {
+                          iframe.contentWindow?.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                          });
+                        }, 1500);
+                      }
+                    } catch (e) {
+                      // Cross-origin restrictions might prevent this
+                      console.log('Iframe scroll not accessible due to cross-origin policy');
+                    }
+                  }, 500);
+                }, 300);
               }}
             />
           </div>
