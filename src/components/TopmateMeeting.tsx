@@ -27,7 +27,13 @@ const TopmateMeeting = () => {
       <DialogTrigger asChild>
         <button className="group relative border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 shadow-xl hover:shadow-green-500/25 flex items-center gap-3 animate-bounce hover:animate-none">
           <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-          Schedule Meeting
+          <div className="flex flex-col items-center">
+            <span>Schedule Meeting</span>
+            <div className="flex items-center gap-2 text-sm">
+              <span className="line-through text-red-400">₹2999</span>
+              <span className="text-yellow-300 font-bold">Only ₹999</span>
+            </div>
+          </div>
           <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-pulse flex items-center gap-1">
             <Sparkles className="w-3 h-3" />
             NEW
@@ -39,6 +45,10 @@ const TopmateMeeting = () => {
           <DialogTitle className="text-2xl font-bold text-center animate-fade-in">
             Book a Meeting with Satyam
           </DialogTitle>
+          <div className="text-center mt-2">
+            <span className="text-lg line-through text-red-500 mr-3">₹2999</span>
+            <span className="text-2xl font-bold text-green-500">Special Offer: Only ₹999!</span>
+          </div>
         </DialogHeader>
         <div className="p-6 animate-fade-in">
           <div className="relative overflow-hidden rounded-lg shadow-2xl">
