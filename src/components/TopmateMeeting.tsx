@@ -40,7 +40,7 @@ const TopmateMeeting = () => {
           </span>
         </button>
       </DialogTrigger>
-      <DialogContent className="max-w-6xl max-h-[90vh] w-[95vw] p-0 transition-all duration-1000 ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]">
+      <DialogContent className="max-w-7xl max-h-[95vh] w-[98vw] p-0 transition-all duration-1000 ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]">
         <DialogHeader className="p-6 pb-0">
           <DialogTitle className="text-2xl font-bold text-center animate-fade-in">
             Book a Meeting with Satyam
@@ -56,7 +56,7 @@ const TopmateMeeting = () => {
             <iframe
               src="https://topmate.io/satyam_chourasiya10/page/UKbicXJCYO?utm_source=spotlight&utm_medium=email"
               width="100%"
-              height="700"
+              height="800"
               style={{ 
                 border: 'none', 
                 borderRadius: '8px',
@@ -65,7 +65,7 @@ const TopmateMeeting = () => {
               }}
               title="Book a meeting with Satyam"
               className="w-full transform transition-all duration-2000 ease-in-out hover:scale-[1.02]"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"
               onLoad={(e) => {
                 // Smooth scroll effect when iframe loads
                 const iframe = e.target as HTMLIFrameElement;
