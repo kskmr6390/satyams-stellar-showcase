@@ -9,11 +9,11 @@ const Blog = () => {
     {
       id: 1,
       title: "Building Scalable Backend Systems: My Journey at Entropik",
-      description: "As a Senior Backend Engineer with over 6 years of experience, I've had the privilege of working on some fascinating projects that have shaped my understanding of scalable systems and modern backend development...",
+      description: "As a Senior Backend Engineer with over 6 years of experience, I've had the privilege of working on some fascinating projects that have shaped my understanding of scalable systems and modern backend development. In this comprehensive guide, I'll share insights from my journey, including the challenges I've faced, the solutions I've implemented, and the lessons I've learned along the way.",
       readTime: "8 min read",
       publishedDate: "Nov 2024",
       tags: ["Python", "FastAPI", "AWS", "Architecture"],
-      url: "https://dev.to/satyam_chourasiya_99ea2e4",
+      url: "https://dev.to/satyam_chourasiya_99ea2e4/building-scalable-backend-systems-my-journey-at-entropik-4o8g",
       featured: true
     },
     {
