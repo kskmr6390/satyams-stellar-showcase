@@ -7,6 +7,7 @@ import Achievements from "@/components/Achievements";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Navigation from "@/components/Navigation";
+import AIProjectPopup from "@/components/AIProjectPopup";
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
       <Achievements />
       <Projects />
       <Contact />
+      <AIProjectPopup />
     </div>
   );
 };
