@@ -28,8 +28,8 @@ const AIProjectPopup = () => {
   };
 
   const handleLearnMore = () => {
-    // You can redirect to your AI project page or open a modal with more details
-    window.open('#', '_blank'); // Replace with your AI project URL
+    // Redirect to Inkwell AI project on GitHub
+    window.open('https://github.com/kskmr6390/inkwell_ai/blob/main/README.md', '_blank');
     handleClose();
   };
 
