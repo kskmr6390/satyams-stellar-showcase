@@ -69,8 +69,8 @@ const Hero = () => {
       <div className="absolute bottom-20 right-10 w-16 h-16 bg-pink-500/20 rounded-full animate-bounce"></div>
       <div className="absolute top-1/3 right-20 w-12 h-12 border-2 border-blue-400/30 rounded-full animate-spin-slow"></div>
       
-      <div className="text-center z-20 px-4 max-w-5xl mx-auto">
-        <div className="mb-8 relative">
+      <div className="text-center z-20 px-4 max-w-5xl mx-auto pt-20">
+        <div className="mb-8 relative mt-8">
           <div className="relative inline-block">
             <img
               src="/lovable-uploads/608bfbbf-b299-4088-a452-f703c3f34c4a.png"
