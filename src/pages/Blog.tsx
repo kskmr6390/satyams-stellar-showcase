@@ -7,16 +7,6 @@ import { Pagination, PaginationContent, PaginationItem, PaginationLink, Paginati
 const Blog = () => {
   const blogPosts = [
     {
-      id: 1,
-      title: "Building Scalable Backend Systems: My Journey at Entropik",
-      description: "As a Senior Backend Engineer with over 6 years of experience, I've had the privilege of working on some fascinating projects that have shaped my understanding of scalable systems and modern backend development. In this comprehensive guide, I'll share insights from my journey, including the challenges I've faced, the solutions I've implemented, and the lessons I've learned along the way.",
-      readTime: "8 min read",
-      publishedDate: "Nov 2024",
-      tags: ["Python", "FastAPI", "AWS", "Architecture"],
-      url: "https://dev.to/satyam_chourasiya_99ea2e4/building-scalable-backend-systems-my-journey-at-entropik-4o8g",
-      featured: true
-    },
-    {
       id: 2,
       title: "Designing Rate Limiters for Multi-Agent AI Systems: Patterns, Pitfalls, and Best Practices",
       description: "Learn how to design and implement robust rate limiting strategies for multi-agent AI systems. This comprehensive guide covers patterns, common pitfalls, and best practices for managing API limits in complex AI workflows.",
@@ -24,7 +14,7 @@ const Blog = () => {
       publishedDate: "Jul 12, 2024",
       tags: ["AI", "Open Source", "DevTools", "Machine Learning"],
       url: "https://dev.to/satyam_chourasiya_99ea2e4/designing-rate-limiters-for-multi-agent-ai-systems-patterns-pitfalls-and-best-practices-4i4e",
-      featured: false
+      featured: true
     },
     {
       id: 3,
@@ -181,7 +171,13 @@ const Blog = () => {
 
         {/* All Articles Grid */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-8">All Articles</h2>
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-bold text-slate-800 dark:text-white">All Articles</h2>
+            {/* New Blog Alert */}
+            <div className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-pulse">
+              🆕 New Blog Alert
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.map((post) => (
               <Card key={post.id} className="hover:shadow-lg transition-all duration-300 group">
