@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Clock, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock, CheckCircle, Github, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -209,7 +209,7 @@ const Contact = () => {
 
         {/* Social Links */}
         <div className="mt-16 text-center">
-          <h4 className="text-white font-semibold mb-6">Connect with me on</h4>
+          <h4 className="text-white font-semibold mb-6">Follow me on</h4>
           <div className="flex justify-center gap-6">
             <a
               href="https://www.linkedin.com/in/satyam-chourasiya-931674141/"
@@ -217,7 +217,15 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="group bg-slate-800/50 hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-700 p-4 rounded-full transition-all duration-300 transform hover:scale-110 border border-slate-700/50 hover:border-blue-500"
             >
-              <span className="text-gray-400 group-hover:text-white transition-colors">LinkedIn</span>
+              <Linkedin className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
+            </a>
+            <a
+              href="https://twitter.com/ksatyam1038"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-slate-800/50 hover:bg-gradient-to-r hover:from-sky-500 hover:to-sky-600 p-4 rounded-full transition-all duration-300 transform hover:scale-110 border border-slate-700/50 hover:border-sky-400"
+            >
+              <Twitter className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
             </a>
             <a
               href="https://github.com/kskmr6390"
@@ -225,7 +233,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="group bg-slate-800/50 hover:bg-gradient-to-r hover:from-gray-700 hover:to-gray-800 p-4 rounded-full transition-all duration-300 transform hover:scale-110 border border-slate-700/50 hover:border-gray-500"
             >
-              <span className="text-gray-400 group-hover:text-white transition-colors">GitHub</span>
+              <Github className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
             </a>
           </div>
         </div>
