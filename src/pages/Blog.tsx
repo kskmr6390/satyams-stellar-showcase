@@ -181,45 +181,61 @@ const Blog = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.map((post) => (
-              <Card key={post.id} className="hover:shadow-lg transition-all duration-300 group">
-                <CardHeader>
-                  <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400 mb-2">
-                    <span>{post.publishedDate}</span>
-                    <span>{post.readTime}</span>
+              <Card key={post.id} className="hover:shadow-lg transition-all duration-300 group overflow-hidden border-slate-200 dark:border-slate-700">
+                <div className="relative">
+                  {/* Dev.to style header */}
+                  <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-slate-800 dark:to-slate-700 p-4 border-b border-slate-200 dark:border-slate-600">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src="/lovable-uploads/608bfbbf-b299-4088-a452-f703c3f34c4a.png"
+                          alt="Satyam Chourasiya"
+                          className="w-8 h-8 rounded-full object-cover"
+                        />
+                        <div>
+                          <p className="text-sm font-medium text-slate-800 dark:text-white">Satyam Chourasiya</p>
+                          <p className="text-xs text-slate-500 dark:text-slate-400">{post.publishedDate}</p>
+                        </div>
+                      </div>
+                      <div className="bg-slate-900 text-white px-2 py-1 rounded text-xs font-bold">
+                        DEV
+                      </div>
+                    </div>
                   </div>
-                  <CardTitle className="text-lg group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                    {post.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-slate-600 dark:text-slate-300 mb-4 line-clamp-3">
-                    {post.description.substring(0, 120)}...
-                  </CardDescription>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.slice(0, 2).map((tag) => (
-                      <span key={tag} className="bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-2 py-1 rounded text-xs">
-                        {tag}
-                      </span>
-                    ))}
-                    {post.tags.length > 2 && (
-                      <span className="text-slate-500 dark:text-slate-400 text-xs">
-                        +{post.tags.length - 2} more
-                      </span>
+                  
+                  {/* Article content */}
+                  <CardContent className="p-4">
+                    <CardTitle className="text-lg font-bold text-slate-800 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors leading-tight">
+                      {post.title}
+                    </CardTitle>
+                    
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {post.tags.slice(0, 3).map((tag) => (
+                        <span key={tag} className="bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-2 py-1 rounded text-xs">
+                          #{tag.toLowerCase()}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-4">
+                      <span>{post.readTime}</span>
+                      <span>From dev.to</span>
+                    </div>
+                    
+                    {post.url !== "#" ? (
+                      <Button asChild variant="outline" size="sm" className="w-full">
+                        <a href={post.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
+                          <ExternalLink className="w-4 h-4" />
+                          Read Article
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button variant="outline" size="sm" className="w-full" disabled>
+                        Coming Soon
+                      </Button>
                     )}
-                  </div>
-                  {post.url !== "#" ? (
-                    <Button asChild variant="outline" size="sm" className="w-full">
-                      <a href={post.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
-                        <ExternalLink className="w-4 h-4" />
-                        Read Article
-                      </a>
-                    </Button>
-                  ) : (
-                    <Button variant="outline" size="sm" className="w-full" disabled>
-                      Coming Soon
-                    </Button>
-                  )}
-                </CardContent>
+                  </CardContent>
+                </div>
               </Card>
             ))}
           </div>
