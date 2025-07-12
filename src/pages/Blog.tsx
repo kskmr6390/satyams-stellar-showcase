@@ -125,8 +125,13 @@ const Blog = () => {
         {blogPosts.filter(post => post.featured).map((post) => (
           <Card key={post.id} className="mb-12 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 border-purple-200/50 dark:border-purple-700/50">
             <CardHeader>
-              <div className="flex items-center gap-2 text-sm text-purple-600 dark:text-purple-400 mb-2">
-                <span className="bg-purple-600 text-white px-2 py-1 rounded text-xs font-semibold">FEATURED</span>
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="bg-purple-600 text-white px-2 py-1 rounded text-xs font-semibold">FEATURED</span>
+                </div>
+                <div className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg animate-pulse">
+                  🆕 New Blog Alert
+                </div>
               </div>
               <CardTitle className="text-2xl text-slate-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
                 {post.title}
@@ -173,10 +178,6 @@ const Blog = () => {
         <div className="mb-12">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-bold text-slate-800 dark:text-white">All Articles</h2>
-            {/* New Blog Alert */}
-            <div className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-pulse">
-              🆕 New Blog Alert
-            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.map((post) => (
