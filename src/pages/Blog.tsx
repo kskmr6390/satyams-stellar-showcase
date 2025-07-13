@@ -3,6 +3,7 @@ import { ExternalLink, Calendar, User, Clock } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
+import Footer from "@/components/Footer";
 
 const Blog = () => {
   const blogPosts = [
@@ -276,6 +277,7 @@ const Blog = () => {
           </Card>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
