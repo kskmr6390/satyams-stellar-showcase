@@ -106,7 +106,7 @@ const AdvancedSkills = () => {
 
   const achievements = [
     { icon: TrendingUp, text: "Scaled systems to 10M+ requests/day", color: "text-green-400" },
-    { icon: Award, text: "Led teams of 8+ engineers", color: "text-blue-400" },
+    { icon: Award, text: "Led teams of 5+ engineers", color: "text-blue-400" },
     { icon: Star, text: "99.9% uptime SLA achievement", color: "text-yellow-400" },
     { icon: Zap, text: "Reduced latency by 60% through optimization", color: "text-purple-400" },
   ];

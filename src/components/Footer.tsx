@@ -52,9 +52,6 @@ const Footer = () => {
               <span className={`text-gray-400 font-medium transition-colors ${social.textColor}`}>
                 {social.name}
               </span>
-              <span className={`text-sm font-bold bg-slate-700 px-2 py-1 rounded-md text-gray-300 group-hover:bg-slate-600 transition-colors`}>
-                ({social.count})
-              </span>
             </a>
           ))}
         </div>
