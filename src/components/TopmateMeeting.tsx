@@ -6,10 +6,10 @@ import { useState, useEffect } from "react";
 const TopmateMeeting = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isIdle, setIsIdle] = useState(false);
+  const [isManuallyOpened, setIsManuallyOpened] = useState(false);
 
   useEffect(() => {
     let idleTimer: NodeJS.Timeout;
-    let autoCloseTimer: NodeJS.Timeout;
 
     const resetIdleTimer = () => {
       setIsIdle(false);
@@ -23,14 +23,14 @@ const TopmateMeeting = () => {
 
     const handleUserActivity = () => {
       resetIdleTimer();
-      // Close popup if user becomes active
-      if (isOpen) {
+      // Only close popup if it was auto-opened (not manually opened)
+      if (isOpen && !isManuallyOpened) {
         setIsOpen(false);
       }
     };
 
     // Track various user activities
-    const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click'];
+    const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
     
     events.forEach(event => {
       document.addEventListener(event, handleUserActivity, true);
@@ -41,23 +41,24 @@ const TopmateMeeting = () => {
 
     return () => {
       clearTimeout(idleTimer);
-      clearTimeout(autoCloseTimer);
       events.forEach(event => {
         document.removeEventListener(event, handleUserActivity, true);
       });
     };
-  }, [isOpen]);
+  }, [isOpen, isManuallyOpened]);
 
   // Show popup when user becomes idle
   useEffect(() => {
     if (isIdle && !isOpen) {
       const showTimer = setTimeout(() => {
         setIsOpen(true);
+        setIsManuallyOpened(false); // Mark as auto-opened
       }, 2000); // Show 2 seconds after becoming idle
 
       // Auto-close after 10 seconds
       const closeTimer = setTimeout(() => {
         setIsOpen(false);
+        setIsManuallyOpened(false);
       }, 12000);
 
       return () => {
@@ -67,10 +68,22 @@ const TopmateMeeting = () => {
     }
   }, [isIdle, isOpen]);
 
+  const handleManualOpen = () => {
+    setIsOpen(true);
+    setIsManuallyOpened(true); // Mark as manually opened
+  };
+
+  const handleClose = (open: boolean) => {
+    setIsOpen(open);
+    if (!open) {
+      setIsManuallyOpened(false); // Reset when closed
+    }
+  };
+
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogTrigger asChild>
-        <button className="group relative border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 shadow-xl hover:shadow-green-500/25 flex items-center gap-3 animate-bounce hover:animate-none">
+        <button onClick={handleManualOpen} className="group relative border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 shadow-xl hover:shadow-green-500/25 flex items-center gap-3 animate-bounce hover:animate-none">
           <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
           <div className="flex flex-col items-center">
             <span>Schedule Meeting</span>
