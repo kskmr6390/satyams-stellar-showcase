@@ -5,22 +5,67 @@ import { useState, useEffect } from "react";
 
 const TopmateMeeting = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isIdle, setIsIdle] = useState(false);
 
-  // Auto-open dialog after 2 seconds, then close after 8 seconds
   useEffect(() => {
-    const openTimer = setTimeout(() => {
-      setIsOpen(true);
-    }, 2000);
+    let idleTimer: NodeJS.Timeout;
+    let autoCloseTimer: NodeJS.Timeout;
 
-    const closeTimer = setTimeout(() => {
-      setIsOpen(false);
-    }, 10000);
+    const resetIdleTimer = () => {
+      setIsIdle(false);
+      clearTimeout(idleTimer);
+      
+      // Set user as idle after 30 seconds of inactivity
+      idleTimer = setTimeout(() => {
+        setIsIdle(true);
+      }, 30000);
+    };
+
+    const handleUserActivity = () => {
+      resetIdleTimer();
+      // Close popup if user becomes active
+      if (isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    // Track various user activities
+    const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click'];
+    
+    events.forEach(event => {
+      document.addEventListener(event, handleUserActivity, true);
+    });
+
+    // Initial timer setup
+    resetIdleTimer();
 
     return () => {
-      clearTimeout(openTimer);
-      clearTimeout(closeTimer);
+      clearTimeout(idleTimer);
+      clearTimeout(autoCloseTimer);
+      events.forEach(event => {
+        document.removeEventListener(event, handleUserActivity, true);
+      });
     };
-  }, []);
+  }, [isOpen]);
+
+  // Show popup when user becomes idle
+  useEffect(() => {
+    if (isIdle && !isOpen) {
+      const showTimer = setTimeout(() => {
+        setIsOpen(true);
+      }, 2000); // Show 2 seconds after becoming idle
+
+      // Auto-close after 10 seconds
+      const closeTimer = setTimeout(() => {
+        setIsOpen(false);
+      }, 12000);
+
+      return () => {
+        clearTimeout(showTimer);
+        clearTimeout(closeTimer);
+      };
+    }
+  }, [isIdle, isOpen]);
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
