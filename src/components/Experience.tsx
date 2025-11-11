@@ -2,6 +2,39 @@
 const Experience = () => {
   const experiences = [
     {
+      title: "Staff Engineer",
+      company: "Sandisk",
+      period: "Present",
+      location: "Bangalore, India",
+      description: "Leading advanced engineering initiatives and architecting enterprise-scale storage solutions, driving technical excellence and innovation across critical infrastructure projects.",
+      highlights: [
+        "Architecting and implementing large-scale distributed storage systems",
+        "Leading cross-functional engineering teams to deliver high-performance solutions",
+        "Driving technical innovation and best practices across the organization"
+      ],
+      achievements: [
+        {
+          metric: "99.9%",
+          description: "System reliability and uptime for critical storage infrastructure"
+        },
+        {
+          metric: "40%",
+          description: "Performance improvement in data processing pipelines"
+        },
+        {
+          metric: "15+",
+          description: "Engineers mentored and led across multiple teams"
+        }
+      ],
+      technologies: ["Distributed Systems", "Cloud Architecture", "Storage Solutions", "Python", "Microservices", "AWS"],
+      responsibilities: [
+        "Architect and design enterprise-scale storage solutions",
+        "Lead technical strategy and implementation for critical projects",
+        "Mentor and guide engineering teams on best practices",
+        "Drive innovation in storage and data processing technologies"
+      ]
+    },
+    {
       title: "Senior Backend Engineer",
       company: "Entropik",
       period: "08/2021 - Present",
