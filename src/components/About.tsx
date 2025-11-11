@@ -16,12 +16,13 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <h3 className="text-3xl font-bold text-slate-800 mb-6">
-              Senior Backend Engineer & AI Systems Architect
+              Staff Engineer at Sandisk & AI Systems Architect
             </h3>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Senior Backend Engineer with over 6 years of experience in designing scalable backend systems 
-              and cloud deployment, expert in Python and FastAPI. I led a team of 5 engineers to build 
-              Qatalyst, an AI-powered market research platform processing millions of data points.
+              Staff Engineer at Sandisk with over 6 years of experience in designing scalable backend systems, 
+              distributed storage solutions, and cloud deployment. Expert in Python, FastAPI, and enterprise-scale 
+              architecture. Previously led a team of 5 engineers to build Qatalyst, an AI-powered market research 
+              platform processing millions of data points.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
               Key achievements include developing an advanced search system with Elasticsearch that boosted data 

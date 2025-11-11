@@ -7,9 +7,9 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/h
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Senior Backend Engineer";
+  const fullText = "Staff Engineer at Sandisk";
   
-  const introText = "Hi, I'm Satyam Kumar Chourasiya, a Senior Backend Engineer with over 6 years of experience in designing scalable backend systems, cloud deployment, and leading high-performance engineering teams. I specialize in Python, FastAPI, and building AI-powered applications that drive business growth.";
+  const introText = "Hi, I'm Satyam Kumar Chourasiya, a Staff Engineer at Sandisk with over 6 years of experience in designing scalable backend systems, distributed storage solutions, cloud deployment, and leading high-performance engineering teams. I specialize in Python, FastAPI, and building enterprise-scale applications that drive business growth.";
   
   useEffect(() => {
     let index = 0;
@@ -95,11 +95,11 @@ const Hero = () => {
         </div>
         
         <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed font-light">
-          Expert in Python & FastAPI with 6+ years of experience in designing scalable backend systems, 
-          cloud deployment, and leading high-performance engineering teams. Specialized in{" "}
-          <span className="text-purple-400 font-medium">Scalable Systems</span>,{" "}
-          <span className="text-pink-400 font-medium">Cloud Deployment</span>, and{" "}
-          <span className="text-blue-400 font-medium">AI-powered applications</span>.
+          Staff Engineer at Sandisk with 6+ years of experience in designing scalable backend systems, 
+          distributed storage solutions, cloud deployment, and leading high-performance engineering teams. Specialized in{" "}
+          <span className="text-purple-400 font-medium">Enterprise Architecture</span>,{" "}
+          <span className="text-pink-400 font-medium">Cloud Infrastructure</span>, and{" "}
+          <span className="text-blue-400 font-medium">Distributed Systems</span>.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in flex-wrap">
@@ -172,7 +172,7 @@ const Hero = () => {
                     </div>
                     <div className="flex-1">
                       <p className="font-medium text-base">Satyam Kumar Chourasiya</p>
-                      <p className="text-sm text-muted-foreground">Senior Backend Engineer</p>
+                      <p className="text-sm text-muted-foreground">Staff Engineer at Sandisk</p>
                       <p className="text-sm text-blue-600">500+ connections</p>
                       <p className="text-xs text-muted-foreground mt-1">Bangalore, Karnataka, India</p>
                     </div>
