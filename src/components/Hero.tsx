@@ -73,7 +73,7 @@ const Hero = () => {
         <div className="mb-8 relative mt-8">
           <div className="relative inline-block">
             <img
-              src="/lovable-uploads/608bfbbf-b299-4088-a452-f703c3f34c4a.png"
+              src="/lovable-uploads/profile-pic.png"
               alt="Satyam Kumar Chourasiya"
               className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-gradient-to-r from-purple-400 to-pink-400 shadow-2xl animate-fade-in relative z-10 object-cover"
             />
