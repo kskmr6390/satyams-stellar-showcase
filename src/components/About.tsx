@@ -20,9 +20,8 @@ const About = () => {
                 Staff Engineer at Sandisk
               </h3>
               <a
-                href="https://www.genspark.ai/agents?id=45854d7b-ec3d-4fd3-9f30-48214ce6b9b4"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/satyam_intro_ppt.pptx"
+                download="Satyam_Kumar_Chourasiya_Presentation.pptx"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 View Latest Update
