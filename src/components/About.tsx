@@ -15,9 +15,19 @@ const About = () => {
         
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-slate-800 mb-6">
-              Staff Engineer at Sandisk & AI Systems Architect
-            </h3>
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <h3 className="text-3xl font-bold text-slate-800 mb-6">
+                Staff Engineer at Sandisk
+              </h3>
+              <a
+                href="https://www.genspark.ai/agents?id=45854d7b-ec3d-4fd3-9f30-48214ce6b9b4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                View Latest Update
+              </a>
+            </div>
             <p className="text-lg text-slate-600 leading-relaxed">
               Staff Engineer at Sandisk with over 6 years of experience in designing scalable backend systems, 
               distributed storage solutions, and cloud deployment. Expert in Python, FastAPI, and enterprise-scale 
