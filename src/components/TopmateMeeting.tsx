@@ -1,163 +1,79 @@
+import { Calendar, ArrowUpRight } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
-import { Calendar, Sparkles } from "lucide-react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { useState, useEffect } from "react";
+const TOPMATE_URL =
+  "https://topmate.io/satyam_chourasiya10/page/UKbicXJCYO?utm_source=portfolio&utm_medium=site";
 
-const TopmateMeeting = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isIdle, setIsIdle] = useState(false);
-  const [isManuallyOpened, setIsManuallyOpened] = useState(false);
+interface TopmateMeetingProps {
+  variant?: "primary" | "ghost" | "outline";
+  label?: string;
+  className?: string;
+}
 
-  useEffect(() => {
-    let idleTimer: NodeJS.Timeout;
-
-    const resetIdleTimer = () => {
-      setIsIdle(false);
-      clearTimeout(idleTimer);
-      
-      // Set user as idle after 30 seconds of inactivity
-      idleTimer = setTimeout(() => {
-        setIsIdle(true);
-      }, 30000);
-    };
-
-    const handleUserActivity = () => {
-      resetIdleTimer();
-      // Only close popup if it was auto-opened (not manually opened)
-      if (isOpen && !isManuallyOpened) {
-        setIsOpen(false);
-      }
-    };
-
-    // Track various user activities
-    const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
-    
-    events.forEach(event => {
-      document.addEventListener(event, handleUserActivity, true);
-    });
-
-    // Initial timer setup
-    resetIdleTimer();
-
-    return () => {
-      clearTimeout(idleTimer);
-      events.forEach(event => {
-        document.removeEventListener(event, handleUserActivity, true);
-      });
-    };
-  }, [isOpen, isManuallyOpened]);
-
-  // Show popup when user becomes idle
-  useEffect(() => {
-    if (isIdle && !isOpen) {
-      const showTimer = setTimeout(() => {
-        setIsOpen(true);
-        setIsManuallyOpened(false); // Mark as auto-opened
-      }, 2000); // Show 2 seconds after becoming idle
-
-      // Auto-close after 10 seconds
-      const closeTimer = setTimeout(() => {
-        setIsOpen(false);
-        setIsManuallyOpened(false);
-      }, 12000);
-
-      return () => {
-        clearTimeout(showTimer);
-        clearTimeout(closeTimer);
-      };
-    }
-  }, [isIdle, isOpen]);
-
-  const handleManualOpen = () => {
-    setIsOpen(true);
-    setIsManuallyOpened(true); // Mark as manually opened
-  };
-
-  const handleClose = (open: boolean) => {
-    setIsOpen(open);
-    if (!open) {
-      setIsManuallyOpened(false); // Reset when closed
-    }
-  };
+const TopmateMeeting = ({
+  variant = "outline",
+  label = "Schedule a meeting",
+  className = "",
+}: TopmateMeetingProps) => {
+  const base =
+    "group inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors";
+  const styles = {
+    primary: "bg-foreground text-background hover:bg-foreground/90",
+    outline:
+      "border border-border bg-card text-foreground hover:border-foreground/30",
+    ghost: "text-muted-foreground hover:text-foreground",
+  }[variant];
 
   return (
-    <Dialog open={isOpen} onOpenChange={handleClose}>
+    <Dialog>
       <DialogTrigger asChild>
-        <button onClick={handleManualOpen} className="group relative border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white px-10 py-4 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 shadow-xl hover:shadow-green-500/25 flex items-center gap-3 animate-bounce hover:animate-none">
-          <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-          <div className="flex flex-col items-center">
-            <span>Schedule Meeting</span>
-            <div className="flex items-center gap-2 text-sm">
-              <span className="line-through text-red-400">₹2999</span>
-              <span className="text-yellow-300 font-bold">Only ₹999</span>
-            </div>
-          </div>
-          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-pulse flex items-center gap-1">
-            <Sparkles className="w-3 h-3" />
-            NEW
+        <button className={`${base} ${styles} ${className}`}>
+          <Calendar className="w-4 h-4" />
+          {label}
+          <span className="ml-1 hidden sm:inline rounded-full border border-violet-400/30 bg-violet-500/10 px-2 py-0.5 text-[10px] font-mono text-violet-400">
+            via Topmate
           </span>
         </button>
       </DialogTrigger>
-      <DialogContent className="max-w-7xl max-h-[90vh] w-[95vw] p-0 overflow-y-auto transition-all duration-1000 ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%]">
-        <DialogHeader className="p-6 pb-0">
-          <DialogTitle className="text-2xl font-bold text-center animate-fade-in">
-            Book a Meeting with Satyam
+      <DialogContent className="max-w-5xl w-[95vw] p-0 overflow-hidden border-border bg-background">
+        <DialogHeader className="px-6 pt-6 pb-4 border-b border-border">
+          <DialogTitle className="text-left">
+            <p className="text-xs font-mono uppercase tracking-widest text-violet-400">
+              Book a session
+            </p>
+            <span className="mt-2 block text-xl font-semibold tracking-tight">
+              Schedule a 1:1 with Satyam
+            </span>
+            <span className="mt-1 block text-sm font-normal text-muted-foreground">
+              System design reviews · career advisory · backend & AI architecture
+            </span>
           </DialogTitle>
-          <div className="text-center mt-2">
-            <span className="text-lg line-through text-red-500 mr-3">₹2999</span>
-            <span className="text-2xl font-bold text-green-500">Special Offer: Only ₹999!</span>
-          </div>
         </DialogHeader>
-        <div className="p-6 animate-fade-in">
-          <div className="relative overflow-hidden rounded-lg shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-blue-400/20 animate-pulse"></div>
-            <iframe
-              src="https://topmate.io/satyam_chourasiya10/page/UKbicXJCYO?utm_source=spotlight&utm_medium=email"
-              width="100%"
-              height="700"
-              style={{ 
-                border: 'none', 
-                borderRadius: '8px',
-                transition: 'all 1.5s ease-in-out',
-                scrollBehavior: 'smooth'
-              }}
-              title="Book a meeting with Satyam"
-              className="w-full transform transition-all duration-2000 ease-in-out hover:scale-[1.02]"
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"
-              onLoad={(e) => {
-                // Smooth scroll effect when iframe loads
-                const iframe = e.target as HTMLIFrameElement;
-                iframe.style.opacity = '0';
-                iframe.style.transform = 'translateY(30px)';
-                setTimeout(() => {
-                  iframe.style.transition = 'all 2s ease-in-out';
-                  iframe.style.opacity = '1';
-                  iframe.style.transform = 'translateY(0)';
-                  
-                  // Slow scroll effect inside iframe
-                  setTimeout(() => {
-                    try {
-                      if (iframe.contentWindow) {
-                        iframe.contentWindow.scrollTo({
-                          top: 100,
-                          behavior: 'smooth'
-                        });
-                        setTimeout(() => {
-                          iframe.contentWindow?.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                          });
-                        }, 1500);
-                      }
-                    } catch (e) {
-                      // Cross-origin restrictions might prevent this
-                      console.log('Iframe scroll not accessible due to cross-origin policy');
-                    }
-                  }, 500);
-                }, 300);
-              }}
-            />
-          </div>
+        <div className="relative bg-card">
+          <iframe
+            src={TOPMATE_URL}
+            title="Book a meeting with Satyam on Topmate"
+            className="w-full h-[70vh] border-0"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"
+          />
+        </div>
+        <div className="flex items-center justify-between gap-3 px-6 py-3 border-t border-border text-xs text-muted-foreground">
+          <span className="font-mono">topmate.io · satyam_chourasiya10</span>
+          <a
+            href={TOPMATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
+          >
+            Open in new tab
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </a>
         </div>
       </DialogContent>
     </Dialog>
